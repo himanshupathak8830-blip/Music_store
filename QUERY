@@ -3,7 +3,7 @@ The Music Store Database Project is a SQL-based data analysis project designed t
 The objective of this project is to perform real-world data analysis using SQL queries and generate meaningful business insights such as customer behavior, sales performance, and popular music trends.
 By working on this project, core SQL concepts like joins, aggregations, grouping, subqueries, and sorting are applied to answer practical business questions that a data analyst would face in a real music retail environment.
 
-🎯 Project Objectives
+#Project Objectives
 Understand relational database structure
 Analyze music sales data using SQL
 Identify top-performing customers, cities, and countries
