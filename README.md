@@ -35,23 +35,25 @@ ORDER BY levels DESC
 LIMIT 1;
 
 Explanation:
-The levels column represents the employee hierarchy.
-Sorting in descending order brings the highest level employee first.
-LIMIT 1 returns only the most senior employee.
+The levels column represents the employee hierarchy. Sorting in descending order brings the highest level employee first. LIMIT 1 returns only the most senior employee.
 📌 Business Insight:
 Helps identify the top authority in the company.
-2️⃣ Which countries have the most invoices?
+### 2️⃣ Which countries have the most invoices?
+```sql
 SELECT COUNT(*) AS invoice, billing_country
 FROM invoice
 GROUP BY billing_country
 ORDER BY invoice DESC;
+
 Explanation:
 Counts total invoices for each country.
 Groups data country-wise.
 Orders results so the country with the highest invoices appears first.
 📌 Business Insight:
 Identifies countries generating the most sales.
-3️⃣ What are the top 3 invoice totals?
+
+### 3️⃣ What are the top 3 invoice totals?
+```sql
 SELECT invoice_id, total
 FROM invoice
 ORDER BY total DESC
@@ -61,7 +63,9 @@ Sorts invoices by total amount.
 Displays the top 3 highest-value invoices.
 📌 Business Insight:
 Shows the highest single purchases made.
-4️⃣ Which city has the best customers?
+
+### 4️⃣ Which city has the best customers?
+```sql
 SELECT billing_city, SUM(total) AS total_invoice
 FROM invoice
 GROUP BY billing_city
@@ -71,7 +75,9 @@ Adds up invoice totals city-wise.
 The city with highest revenue comes first.
 📌 Business Insight:
 Best city for promotions or concerts.
-5️⃣ Who is the best customer?
+
+### 5️⃣ Who is the best customer?
+```sql
 SELECT c.customer_id, c.first_name, c.last_name, 
 SUM(i.total) AS total_spent
 FROM customer c
@@ -85,7 +91,8 @@ Calculates total spending per customer.
 Returns the highest spender.
 📌 Business Insight:
 Most valuable customer for loyalty programs.
-🟡 MODERATE LEVEL QUESTIONS (Joins + Filters)
+
+#🟡 MODERATE LEVEL QUESTIONS (Joins + Filters)
 These queries involve multiple tables and deeper analysis.
 6️⃣ List all Rock music listeners
 SELECT DISTINCT c.email, c.first_name, c.last_name
@@ -168,11 +175,13 @@ WHERE purchases = (
 Explanation:
 CTE calculates genre sales per country.
 Subquery finds the highest purchased genre per country.
+
 📌 Business Insight:
-Country-wise music taste analysis.
+- Country-wise music taste analysis.
+
 🏁 Conclusion
-This project demonstrates:
-Strong SQL fundamentals
-Real-world business problem solving
-Ability to work with complex joins and subqueries
-Interview-ready SQL knowledge
+- This project demonstrates:
+- Strong SQL fundamentals
+- Real-world business problem solving
+- Ability to work with complex joins and subqueries
+- Interview-ready SQL knowledge
