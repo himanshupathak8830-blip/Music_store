@@ -215,6 +215,57 @@ Subquery finds the highest purchased genre per country.
 **📌 Business Insight:**
 - Country-wise music taste analysis.
 
+### Find the customer who has spent the most on music in each country.
+```sql
+WITH RECURSIVE country_with_customer AS (
+    SELECT 
+        c.customer_id,
+        c.first_name,
+        c.last_name,
+        i.billing_country,
+        SUM(i.total) AS total_spending
+    FROM invoice i
+    JOIN customer c 
+        ON c.customer_id = i.customer_id
+    GROUP BY 
+        c.customer_id,
+        c.first_name,
+        c.last_name,
+        i.billing_country
+),
+
+country_max_spending AS (
+    SELECT 
+        billing_country,
+        MAX(total_spending) AS max_spending
+    FROM country_with_customer
+    GROUP BY billing_country
+)
+
+SELECT 
+    cc.billing_country,
+    cc.total_spending,
+    cc.first_name,
+    cc.last_name,
+    cc.customer_id
+FROM country_with_customer cc
+JOIN country_max_spending ms
+    ON cc.billing_country = ms.billing_country
+WHERE cc.total_spending = ms.max_spending
+ORDER BY cc.billing_country;
+```
+### Explanation:
+This query identifies the highest-spending customer in each country based on total music purchases.
+It first calculates total spending per customer per country, then finds the maximum spending amount for each country.
+Finally, it returns the customer(s) whose spending matches that maximum, ensuring that all tied top customers are included.
+
+**📌 Business Insight:**
+-This query helps to:
+-Identify VIP customers in each country
+-Understand country-wise customer value
+-Design region-specific loyalty programs
+-Target high-value customers for promotions
+
 **🏁 Conclusion**
 - This project demonstrates:
 - Strong SQL fundamentals
