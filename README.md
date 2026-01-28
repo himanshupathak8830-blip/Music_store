@@ -142,7 +142,7 @@ LIMIT 10;
 ```
 
 ### Explanation:
-Links artists → albums → tracks → genres.
+**Links artists → albums → tracks → genres.**
 Counts Rock tracks per artist.
 Returns top 10 Rock artists.
 
