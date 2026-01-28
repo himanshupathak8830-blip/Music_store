@@ -215,7 +215,7 @@ Subquery finds the highest purchased genre per country.
 **📌 Business Insight:**
 - Country-wise music taste analysis.
 
-### Find the customer who has spent the most on music in each country.
+### ⏸️Find the customer who has spent the most on music in each country.
 ```sql
 WITH RECURSIVE country_with_customer AS (
     SELECT 
