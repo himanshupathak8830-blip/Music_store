@@ -260,11 +260,11 @@ It first calculates total spending per customer per country, then finds the maxi
 Finally, it returns the customer(s) whose spending matches that maximum, ensuring that all tied top customers are included.
 
 **📌 Business Insight:**
--This query helps to:
--Identify VIP customers in each country
--Understand country-wise customer value
--Design region-specific loyalty programs
--Target high-value customers for promotions
+- This query helps to:
+- Identify VIP customers in each country
+- Understand country-wise customer value
+- Design region-specific loyalty programs
+- Target high-value customers for promotions
 
 **🏁 Conclusion**
 - This project demonstrates:
