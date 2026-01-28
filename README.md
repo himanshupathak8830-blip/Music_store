@@ -26,9 +26,9 @@ The Music Store Database Project is a SQL-based data analysis project designed t
 
 # 🎵 Music Store SQL Project – Query Explanation
 🟢 EASY LEVEL QUESTIONS (Basic Understanding)
-These queries are used to explore the database and answer simple business questions.
-1️⃣ Who is the senior most employee?
-'''sql
+## These queries are used to explore the database and answer simple business questions.
+### 1️⃣ Who is the senior most employee?
+```sql
 SELECT * 
 FROM employee
 ORDER BY levels DESC
